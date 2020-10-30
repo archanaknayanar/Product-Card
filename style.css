@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins , sans-serif;
+}
+html,body{
+    background: rgb(199, 222, 243);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.container {
+    position: relative;
+    width: 380px;
+    height: 500px;
+    overflow: hidden;
+    background: #fff;
+}
+.container .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.container .card-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.card-content .wrapper {
+    position: absolute;
+    padding: 10px 25px;
+    width: 100%;
+    bottom: -100%;
+    transition: bottom .2s ease; /*Display ease the card content on hover*/
+}
+.container:hover .card-content .wrapper{
+    bottom: 0px; /*Disables the -100%(hidden content)and set to 0px to display content*/
+}
+.title {
+    font-size: 22px;
+    color: rgb(83, 82, 82);
+}
+.wrapper p {
+    font-size: 15px;
+    color: rgb(83, 82, 82);
+}
+.price {
+    position: absolute;
+    top: 17px;
+    right: 30px;
+    font-size: 22px;
+}
+.wrapper .content {
+    margin: 10px 0;
+}
+.wrapper .content .name {
+    font-size: 15px;
+    font-weight: 500;
+}
+.wrapper .content .size-value {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.content .size-value span{
+    display: block;
+    height: 25px;
+    width: 25px;
+    line-height: 28px;
+    border-radius: 50%;
+    color: rgb(97, 70, 70);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+}
+.content h3{
+    color: rgb(83, 82, 82);
+    font-weight: 500;
+}
+.content .size-value span:active{
+    background: blue;
+    color: #fff;
+}
+.content .color-value{
+    width: 30%;
+    display: flex;
+    margin: 10px 0px;
+    justify-content: space-between;
+}
+.content .color-value span{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+}
+.content .color-value span.pink{
+    background: pink;
+}
+.content .color-value span.grey{
+    background: grey;
+}
+.content .color-value span.blue{
+    background: rgb(132, 218, 245);
+}
+.content .color-value span.active:after{
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    left: -4px;
+    top: -4px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid rgb(66, 64, 64);
+
+}
+.content .color-value span.blue.active:after{
+    border-color: grey;
+}
+.content .color-value span.grey.active:after{
+    border-color: grey;
+}
+.wrapper .btns{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .btns button{
+    height: 40px;
+    width: 100%;
+    margin: 0 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: grey;
+}
